@@ -1,4 +1,4 @@
-users ={100}
-user_time = {100}
+users = { }
+user_time = { }
 
 
