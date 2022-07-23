@@ -41,7 +41,7 @@ async def catch_youtube_fmtid(c, m):
 @Client.on_callback_query()
 async def catch_youtube_dldata(c, q):
     cb_data = q.data.strip()
-    #print(q.message.chat.id)
+    print(q.message.chat.id)
     # Callback Data Check
     yturl = cb_data.split("||")[-1]
     format_id = cb_data.split("||")[-2]
@@ -76,7 +76,7 @@ async def catch_youtube_dldata(c, q):
     await q.edit_message_reply_markup(
         InlineKeyboardMarkup([[InlineKeyboardButton("Downloading...", callback_data="down")]]))
     filepath = os.path.join(userdir, filext)
-    # await q.edit_message_reply_markup([[InlineKeyboardButton("Processing..")]])
+    await q.edit_message_reply_markup([[InlineKeyboardButton("Processing..")]])
 
     audio_command = [
         "youtube-dl",
